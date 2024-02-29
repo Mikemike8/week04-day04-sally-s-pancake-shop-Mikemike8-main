@@ -4,6 +4,49 @@
 <head>
     <title>Pancake shop</title>
     <link rel="stylesheet" href="./index.css">
+    <script>
+        var userWantsToOrder = confirm("Click Ok to Eat Here or cancel for Fast food!");
+
+        if (userWantsToOrder) {
+            alert("YOU IS ABOUT TO PLACE AN ORDER!");
+        } else {
+            window.location.href = "https://www.mcdonalds.com/us/en-us.html";
+        }
+
+        function createOrders() {
+            var numOrdersInput = document.getElementById("numOrdersInput");
+            var numOrders = parseInt(numOrdersInput.value);
+
+            var ordersHTML = document.getElementById("orders");
+            for (var i = 0; i < numOrders; i++) {
+                var newOrder = `<div class="order">
+                    <img src="./assets/pancakes.png" alt="pancake">
+                    <button onclick="removeOrder(event)">Ready</button>
+                </div>`;
+                ordersHTML.innerHTML += newOrder;
+            }
+        }
+
+        function createOrders1() {
+            var numOrdersInput1 = document.getElementById("numOrdersInput1");
+            var numOrders1 = parseInt(numOrdersInput1.value);
+
+            var ordersHTML = document.getElementById("orders");
+            for (var i = 0; i < numOrders1; i++) {
+                var newOrder1 = `<div class="order">
+                    <img src="./assets/coffee.png" alt="coffee">
+                    <button onclick="removeOrder(event)">Ready</button>
+                </div>`;
+                ordersHTML.innerHTML += newOrder1;
+            }
+        }
+
+        function removeOrder(event) {
+            var elementThisEventWasTriggeredOn = event.target;
+            var parentElement = elementThisEventWasTriggeredOn.parentElement;
+            parentElement.remove();
+        }
+    </script>
 </head>
 
 <body>
@@ -13,128 +56,33 @@
             <h1>Orders</h1>
             <div id="orders">
                 <!-- Inject order elements here -->
-
                 <div class="order">
                     <img src="./assets/pancakes.png" alt="pancake">
                 </div>
-
             </div>
         </div>
+
         <div id="orderCreation">
             <h1>Menu</h1>
             <div id="foodoptions">
                 <div class="foodoption">
                     <img src="./assets/pancakes.png" alt="pancake">
                     <h2>Pancakes</h2>
-                    <input type="text">
-                    <button 
-                        onclick='
-                        //*** YOUR JAVASCRIPT CODE HERE ***
-                        //Select the orders div and save it to a variable
-                        //Create a new order element as a string and save it to a variable (lines 17 - 19 is an order element)
-                        //Inject the new order element into the orders div using innerHTML
-
-                        var ordersHTML = document.getElementById("orders")
-                        var newOrder = `<div class="order">
-                    <img src="./assets/pancakes.png" alt="pancake">
-                    <button onclick="
-                    //modify this html string by adding a button element inside the order div
-                    var elementThisEventWasTriggeredOn = event.target
-                    var parentElement = elementThisEventWasTriggeredOn.parentElement
-                    parentElement.remove()">Ready</button>
-                     </div>`
-
-
-
-
-
-                //Option 2
-                 ordersHTML.innerHTML = ordersHTML.innerHTML += newOrder
-
-
-
-                        
-                        '>Create Order</button>
-                        <button onclick="
-                        var ordersHTML = document.getElementById('orders')
-                        var newOrder = `<div class='order'>
-                        <img src='./assets/pancakes.png' alt='pancake'>
-
-                        <button onclick='
-                    //modify this html string by adding a button element inside the order div
-                    var elementThisEventWasTriggeredOn = event.target
-                    var parentElement = elementThisEventWasTriggeredOn.parentElement
-                    parentElement.remove()'>Ready</button>
-                        
-                        
-                        </div>`;
-
-                        ordersHTML.innerHTML += newOrder + newOrder                       
-                        ">Make 2 orders</button>
-
-                        
-
-                        
+                    <input type="number" id="numOrdersInput" placeholder="How Many Orders?">
+                    <button onclick="createOrders()">Create Order</button>
+                    <button onclick="createOrders()">Make 2 orders</button>
                 </div>
-                
+
                 <div class="foodoption">
-                    <img src="./assets/coffee.png" alt="pancake">
+                    <img src="./assets/coffee.png" alt="coffee">
                     <h2>Coffee</h2>
-                    <input type="text">
-                    <button
-                        onclick='
-                        //*** YOUR JAVASCRIPT CODE HERE ***
-                        //Select the orders div and save it to a variable
-                        //Create a new order element as a string and save it to a variable (lines 18 - 20 is an order element)
-                        //Inject the new order element into the orders div using innerHTML
-
-
-                        
-                        var ordersHTML = document.getElementById("orders")
-                        var newOrder = `<div class="order">
-                    <img src="./assets/coffee.png" alt="pancake">
-                    <button onclick="
-                    //modify this html string by adding a button element inside the order div
-                    var elementThisEventWasTriggeredOn = event.target
-                    var parentElement = elementThisEventWasTriggeredOn.parentElement
-                    parentElement.remove()">Ready</button>
-                     </div>`
-
-
-
-
-
-                //Option 2
-                 ordersHTML.innerHTML = ordersHTML.innerHTML += newOrder
-
-
-
-                        '>Create Order</button>
-                         <button onclick="
-
-var ordersHTML = document.getElementById('orders')
-                        var newOrder = `<div class='order'>
-                        <img src='./assets/coffee.png' alt='pancake'>
-
-                        <button onclick='
-                    //modify this html string by adding a button element inside the order div
-                    var elementThisEventWasTriggeredOn = event.target
-                    var parentElement = elementThisEventWasTriggeredOn.parentElement
-                    parentElement.remove()'>Ready</button>
-                        
-                        
-                        </div>`;
-
-                        ordersHTML.innerHTML += newOrder + newOrder      
-                         
-                         ">Make 2 orders</button>
-                         
-
-
+                    <input type="number" id="numOrdersInput1" placeholder="How Many Orders?">
+                    <button onclick="createOrders1()">Create Order</button>
+                    <button onclick="createOrders1()">Make 2 orders</button>
                 </div>
-
             </div>
         </div>
+
     </div>
 </body>
 
