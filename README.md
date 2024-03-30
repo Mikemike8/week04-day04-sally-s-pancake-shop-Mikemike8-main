@@ -123,7 +123,16 @@ A user should be able to create any number of orders for a menu item at once.
     - Configure a [for-loop to repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for#examples) some code for a number of iterations equal to the value of "pancakeOrders"
     - Place the code lines for creating a new order inside the for-loop
 
-
+ function createTwoOrders() {
+        var ordersHTML = document.getElementById("orders");
+        for (var i = 0; i < 2; i++) {
+            var newOrder = `<div class="order">
+                <img src="./assets/pancakes.png" alt="pancake">
+                <button onclick="removeOrder(event)">Ready</button>
+            </div>`;
+            ordersHTML.innerHTML += newOrder;
+        }
+    }
 <br>
 
 

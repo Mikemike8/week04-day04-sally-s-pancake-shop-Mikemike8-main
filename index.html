@@ -13,6 +13,55 @@
             window.location.href = "https://www.mcdonalds.com/us/en-us.html";
         }
 
+        function createOneOrder() {
+        var ordersHTML = document.getElementById("orders");
+        for (var i = 0; i < 1; i++) {
+            var newOrder = `<div class="order">
+                <img src="./assets/pancakes.png" alt="pancake">
+                <button onclick="removeOrder(event)">Ready</button>
+            </div>`;
+            ordersHTML.innerHTML += newOrder;
+        }
+    }
+
+    function createOneOrder1() {
+        var ordersHTML = document.getElementById("orders");
+        for (var i = 0; i < 1; i++) {
+            var newOrder = `<div class="order">
+                <img src="./assets/coffee.png" alt="Coffee">
+                <button onclick="removeOrder(event)">Ready</button>
+            </div>`;
+            ordersHTML.innerHTML += newOrder;
+        }
+    }
+
+
+
+
+        function createTwoOrders() {
+        var ordersHTML = document.getElementById("orders");
+        for (var i = 0; i < 2; i++) {
+            var newOrder = `<div class="order">
+                <img src="./assets/pancakes.png" alt="pancake">
+                <button onclick="removeOrder(event)">Ready</button>
+            </div>`;
+            ordersHTML.innerHTML += newOrder;
+        }
+    }
+    function createTwoOrders2() {
+        var ordersHTML = document.getElementById("orders");
+        for (var i = 0; i < 2; i++) {
+            var newOrder = `<div class="order">
+                <img src="./assets/coffee.png" alt="coffee">
+                <button onclick="removeOrder(event)">Ready</button>
+            </div>`;
+            ordersHTML.innerHTML += newOrder;
+        }
+    }
+        
+
+
+
         function createOrders() {
             var numOrdersInput = document.getElementById("numOrdersInput");
             var numOrders = parseInt(numOrdersInput.value);
@@ -69,16 +118,18 @@
                     <img src="./assets/pancakes.png" alt="pancake">
                     <h2>Pancakes</h2>
                     <input type="number" id="numOrdersInput" placeholder="How Many Orders?">
-                    <button onclick="createOrders()">Create Order</button>
-                    <button onclick="createOrders()">Make 2 orders</button>
+                    <button onclick=" createOneOrder() ">Create Order</button>
+                    <button onclick="createOrders()">Multi order</button>
+                    <button onclick=" createTwoOrders()"> two meals</button>
                 </div>
 
                 <div class="foodoption">
                     <img src="./assets/coffee.png" alt="coffee">
                     <h2>Coffee</h2>
                     <input type="number" id="numOrdersInput1" placeholder="How Many Orders?">
-                    <button onclick="createOrders1()">Create Order</button>
-                    <button onclick="createOrders1()">Make 2 orders</button>
+                    <button onclick=" createOneOrder1() ">Create Order</button>
+                    <button onclick="createOrders1()">Multi Order</button>
+                    <button onclick=" createTwoOrders2()"> two meals</button>
                 </div>
             </div>
         </div>
